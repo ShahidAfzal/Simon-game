@@ -53,7 +53,7 @@ $(document).ready(() => {
 
 function updateScore() {
     const currentScore = level - 1; // Calculate the current score
-    currentScore = currentScore >= 0 ? currentScore : 0; // Ensure the score is not negative
+    currentScore >= 0 ? currentScore : 0; // Ensure the score is not negative
     document.querySelector('.score').innerText = `Score: ${currentScore}`;
     
     // Fetch existing high score from localStorage
@@ -124,7 +124,7 @@ function buttonClickHandler(buttonId) {
 }
 
 function playSound(color) {
-    let sound = new Audio('/Simon Game Challenge Starting Files/sounds/' + color + '.mp3');
+    let sound = new Audio('/sounds/' + color + '.mp3');
     sound.play();
 }
 
