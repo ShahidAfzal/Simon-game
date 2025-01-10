@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simon</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+
+<body>
+  <div class="score">Score: </div>
+  <div class="highest-score">Highest Score:</div>
+
+  <h1 id="level-title">Press A Key to Start</h1>
+  <div class="container">
+    <div lass="row">
+
+      <div type="button" id="green" class="btn green">
+
+      </div>
+
+      <div type="button" id="red" class="btn red">
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div type="button" id="yellow" class="btn yellow">
+
+      </div>
+      <div type="button" id="blue" class="btn blue">
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/game.js" charset="utf-8"></script>
+</body>
+
+</html> -->
+
+
+<!-- updated code -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simon Game</title>
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="score-container">
+    <div class="score">Score: 0</div>
+    <div class="highest-score">Highest Score: 0</div>
+  </div>
+
+  <button class="instructions-btn">How to Play</button>
+
+  <div class="instructions">
+    <button class="close-instructions">×</button>
+    <h2>How to Play Simon</h2>
+    <ol>
+      <li>Press any key to start the game</li>
+      <li>Simon will play a sequence of colors</li>
+      <li>Repeat the sequence by clicking the colors in the same order</li>
+      <li>Each successful round adds one more color to the sequence</li>
+      <li>If you make a mistake, the game ends</li>
+      <li>Try to beat your highest score!</li>
+    </ol>
+    <p>Mobile users: Tap anywhere on screen to start</p>
+  </div>
+
+  <h1 id="level-title">Press Any Key to Start</h1>
+  <div class="container">
+    <div id="green" class="btn green"></div>
+    <div id="red" class="btn red"></div>
+    <div id="yellow" class="btn yellow"></div>
+    <div id="blue" class="btn blue"></div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/Simon Game Challenge Starting Files/game.js"></script>
+</body>
+</html>

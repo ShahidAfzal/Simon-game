@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+/* Base styles */
+body {
+  text-align: center;
+  background-color: #011F3F;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin: 60px 0 30px 0;
+  color: #FEF2BF;
+  text-align: center;
+  line-height: 1.4;
+  margin-top: 100px;
+}
+
+.container {
+  width: min(90%, 800px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.btn {
+  aspect-ratio: 1;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border: min(10px, 3vw) solid black;
+  border-radius: 20%;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Score styles */
+.score-container {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  background-color: rgba(1, 31, 63, 0.95);
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 100;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.score, .highest-score {
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  margin: 10px 0;
+  position: static;
+  line-height: 1.4;
+}
+
+/* Instructions modal */
+.instructions {
+  background: rgba(0, 0, 0, 0.95);
+  color: #FEF2BF;
+  padding: 30px;
+  border-radius: 15px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: none;
+  z-index: 200;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+.instructions.show {
+  display: block;
+}
+
+.instructions h2 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  margin-bottom: 25px;
+  color: #FEF2BF;
+}
+
+.instructions ol {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.instructions li {
+  margin-bottom: 15px;
+}
+
+.instructions p {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(254, 242, 191, 0.3);
+}
+
+.instructions-btn {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  background: #FEF2BF;
+  color: #011F3F;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  z-index: 100;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.instructions-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.close-instructions {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  background: none;
+  border: none;
+  color: #FEF2BF;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+/* Game specific colors */
+.red { background-color: red; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.yellow { background-color: yellow; }
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  .container {
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  /* Reorganized layout for mobile */
+  .score-container {
+    position: static;
+    width: 90%;
+    margin: 10px auto;
+    max-width: 300px;
+    background-color: rgba(1, 31, 63, 0.95);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .instructions-btn {
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  #level-title {
+    font-size: 1.2rem;
+    margin-top: 70px;
+    padding: 0 10px;
+  }
+
+  .score, .highest-score {
+    font-size: 0.7rem;
+    margin: 5px;
+    white-space: nowrap;
+  }
+}
+
+/* Even smaller devices */
+@media (max-width: 375px) {
+  .score-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #level-title {
+    margin-top: 120px;
+  }
+
+  .score, .highest-score {
+    margin: 3px 0;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .btn:active {
+    opacity: 0.8;
+  }
+}
